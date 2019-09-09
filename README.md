@@ -1,3 +1,7 @@
+# Step Slider
+
+![step slider](https://user-images.githubusercontent.com/11331836/64526275-24f66180-d303-11e9-86fb-202444b03336.gif)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
