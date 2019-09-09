@@ -2,6 +2,7 @@ import styled, { css } from "styled-components";
 import { motion } from "framer-motion";
 
 export const Wrap = styled.div`
+  cursor: pointer;
   display: flex;
   align-items: center;
   position: relative;
@@ -40,6 +41,7 @@ interface StepProps {
 }
 
 export const Step = styled.button<StepProps>`
+  cursor: pointer;
   display: flex;
   width: 12px;
   height: 12px;
