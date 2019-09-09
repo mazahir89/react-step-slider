@@ -78,12 +78,10 @@ export const Arrow = styled.div`
   height: 0;
   margin-left: -1px;
   bottom: 32px;
-  /* z-index: 0; */
   border: 8px solid black;
   border-color: transparent transparent #ffffff #ffffff;
   transform-origin: 0 0;
   transform: rotate(-45deg);
-  /* box-shadow: 0 1px 6px lightgrey; */
   background-color: white;
 `;
 

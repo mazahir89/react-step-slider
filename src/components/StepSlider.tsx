@@ -164,6 +164,9 @@ function StepSlider({ steps }: Props) {
             }}
           />
           <Thumb
+            role="slider"
+            aria-orientation="horizontal"
+            aria-valuetext={getLabel()}
             drag="x"
             dragConstraints={wrapRef}
             dragElastic={0}
