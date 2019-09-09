@@ -13,7 +13,7 @@ export const UnselectedLine = styled(motion.div)`
   left: 10px;
   right: 10px;
 
-  background: wheat;
+  background: #a2c5e8;
   height: 4px;
 `;
 
@@ -23,7 +23,7 @@ export const SelectedLine = styled(motion.div)`
   right: 10px;
   width: 0;
 
-  background: #776654;
+  background: #1976d2;
   height: 4px;
 `;
 
@@ -44,7 +44,7 @@ export const Step = styled.button<StepProps>`
   width: 12px;
   height: 12px;
   padding: 0;
-  background: wheat;
+  background: #a2c5e8;
   border: none;
   border-radius: 50%;
   z-index: 0;
@@ -54,7 +54,7 @@ export const Step = styled.button<StepProps>`
   ${({ passed }) =>
     passed &&
     css`
-      background: #776654;
+      background: #1976d2;
       box-shadow: none;
       z-index: 1;
     `}
@@ -66,7 +66,7 @@ export const Thumb = styled(motion.button)`
   padding: 0;
   border: none;
   border-radius: 50%;
-  background: #776654;
+  background: #1976d2;
   position: absolute;
   z-index: 1;
 `;

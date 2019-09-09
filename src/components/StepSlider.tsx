@@ -2,7 +2,6 @@ import React, { useState, useRef, useEffect } from "react";
 import Measure from "react-measure";
 import {
   useAnimation,
-  motion,
   useMotionValue,
   useSpring,
   transform
@@ -29,14 +28,10 @@ interface Props {
 }
 
 const keyCodes = {
-  arrowUp: 38,
-  arrowDown: 40,
   arrowLeft: 37,
   arrowRight: 39,
   home: 36,
-  end: 35,
-  pageUp: 33,
-  pageDown: 34
+  end: 35
 };
 
 function round(number: number, increment: number, offset: number = 0) {
@@ -53,6 +48,52 @@ function StepSlider({ steps }: Props) {
     damping: 5000,
     stiffness: 4000
   });
+
+  function handleThumpPress(event: React.KeyboardEvent<HTMLButtonElement>) {
+    const keyCodeValue: number = positionValue;
+    switch (event.keyCode) {
+      case keyCodes.arrowRight: {
+        const deltaX = Math.round(width / (steps.length - 1));
+        const newValue = round(positionValue + deltaX, deltaX);
+        if (newValue <= width) {
+          setPositionValue(newValue);
+          position.set(newValue);
+        } else {
+          setPositionValue(width);
+          position.set(width);
+        }
+        break;
+      }
+      case keyCodes.arrowLeft: {
+        const deltaX = Math.round(width / (steps.length - 1));
+        const newValue = round(positionValue - deltaX, deltaX);
+        if (newValue >= 0) {
+          setPositionValue(newValue);
+          position.set(newValue);
+        } else {
+          setPositionValue(0);
+          position.set(0);
+        }
+        break;
+      }
+      case keyCodes.home: {
+        event.preventDefault();
+        setPositionValue(0);
+        position.set(0);
+        break;
+      }
+      case keyCodes.end: {
+        event.preventDefault();
+        setPositionValue(width);
+        position.set(width);
+        break;
+      }
+      default: {
+        break;
+      }
+    }
+    return keyCodeValue;
+  }
 
   function getLabel() {
     const stepXPositions = steps.map((step, index) => {
@@ -138,6 +179,7 @@ function StepSlider({ steps }: Props) {
               const iteration = Math.round(width / (steps.length - 1));
               position.set(round(info.point.x, iteration));
             }}
+            onKeyDown={handleThumpPress}
           >
             <PopUp>
               <Arrow />
