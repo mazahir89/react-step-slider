@@ -1,7 +1,17 @@
 {
   "name": "react-step-slider",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.0",
+  "description": "Step Slider react component",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mazahir89/react-step-slider"
+  },
+  "author": {
+    "name": "Mazahir Hashimli",
+    "linkedin": "https://www.linkedin.com/in/mazahir-hashimli-086824106/",
+    "github": "https://github.com/mazahir89"
+  },
+  "license": "MIT",
   "dependencies": {
     "@types/jest": "^24.0.18",
     "@types/node": "^12.7.4",
